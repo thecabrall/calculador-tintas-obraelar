@@ -4,6 +4,7 @@ import tintas as t
 
 
 #------------------|INICIO DA CONFIGURAÇÃO DE LAYOUT|--------------------------#
+w1,w2,w3 = st.columns(3)
 cont1 = st.container()
 q1,q2 = st.columns(2)
 cont2 = st.container()
@@ -23,6 +24,8 @@ opcoes = t.tintas
 
 #------------------|INICIO DO PROGRAMA|--------------------------#
 
+with w2:
+    logo = st.image('obraelar-logo.jpg')
 
 with cont1:
     st.subheader('Calculadora de Rendimentos - Obra & Lar:')
@@ -48,7 +51,7 @@ with cont2:
                 port = (port_alt * port_lar)
                 par = (altura * largura)
                 area = (par - port)
-                rendimento = (area / rend)
+                rendimento = math.ceil(area / rend)
                 
         elif parede == 'Não':
                 with colu1:
@@ -77,8 +80,3 @@ with cont4:
 
 #------------------|FIM DO CÁLCULO|--------------------------#
 #------------------|FIM DO PROGRAMA|--------------------------#
-
-
-
-
-    
