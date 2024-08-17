@@ -2,23 +2,20 @@ import streamlit as st
 import math
 import tintas as t
 
+opcoes = t.tintas
 
 #------------------|INICIO DA CONFIGURAÇÃO DE LAYOUT|--------------------------#
 w1,w2,w3 = st.columns(3)
 cont1 = st.container()
 q1,q2 = st.columns(2)
 cont2 = st.container()
-cont3 = st.container()
 colu1,colu2 = st.columns(2)
+cont3 = st.container()
 cont4 = st.container()
 k1,k2 = st.columns(2)
 co1,co2,co3,co4 = st.columns(4)
 c1,c2,c3,c4 = st.columns(4)
 col1,col2 = st.columns(2)
-
-opcoes = t.tintas
-
-
 
 #------------------|FIM DA CONFIGURAÇÃO DE LAYOUT|--------------------------#
 
@@ -28,14 +25,13 @@ with w2:
     logo = st.image('obraelar-logo.jpg')
 
 with cont1:
-    st.subheader('Calculadora de Rendimentos - Obra & Lar:')
+    st.subheader('Calculadora - Obra & Lar:')
     tintas = st.selectbox('Selecione a Tinta:', opcoes)
     rend = opcoes[tintas]['rendimento']
     dilu = opcoes[tintas]['diluicao']
-    if opcoes == 'Selecione um modelo':
-        msg_dilu = st.warning('Selecione a Tinta para saber como é feita sua diluição.')
-    elif opcoes != 'Selecione um modelo':
+    if opcoes != 'Selecione um modelo':
         msg_dilu = st.success(f'{dilu}')
+
 with cont2:
     parede = st.selectbox('Sua parede possui porta ou janela?',['Não','Sim'])
     with colu1:
@@ -72,11 +68,25 @@ def lata (txt):
 
 latas = lata(rendimento)
 
-with cont4:
+with cont3:
     if altura == 0 and largura == 0:
         msg_rend = st.warning('Insira um valor de Altura e Largura da Parede para calcularmos quantas unidades você precisará.')
     else:
         msg_rend1 = st.success(f'Você precisará de {rendimento} {latas} de {tintas} para pintar uma parede de {par} m²')
 
 #------------------|FIM DO CÁLCULO|--------------------------#
+
+#------------------|INICIO DO RESUMO|--------------------------#
+
+
+
+
+
+
+
+
+
+
+#------------------|FIM DO RESUMO|--------------------------#
+
 #------------------|FIM DO PROGRAMA|--------------------------#
