@@ -68,22 +68,16 @@ def lata (txt):
 
 latas = lata(rendimento)
 
-with cont3:
-    if altura == 0 and largura == 0:
-        msg_rend = st.warning('Insira um valor de Altura e Largura da Parede para calcularmos quantas unidades você precisará.')
-    else:
-        msg_rend1 = st.success(f'Você precisará de {rendimento} {latas} de {tintas} para pintar uma parede de {par} m²')
 
 #------------------|FIM DO CÁLCULO|--------------------------#
 
 #------------------|INICIO DO RESUMO|--------------------------#
 
-
-
-
-
-
-
+with cont3:
+    if altura == 0 and largura == 0:
+        msg_rend = st.warning('Insira um valor de Altura e Largura da Parede para calcularmos quantas unidades você precisará.')
+    else:
+        msg_rend1 = st.success(f'Você precisará de {rendimento} {latas} de {tintas} para pintar uma parede de {par} m²')
 
 #------------------|FIM DO RESUMO|--------------------------#
 
