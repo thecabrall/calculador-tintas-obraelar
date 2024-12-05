@@ -77,8 +77,6 @@ with cont3:
 #------------------|FIM DO CÁLCULO|--------------------------#
 
 #------------------|INICIO DO RESUMO|--------------------------#
-with cont3:
-  st.button("enviar")
 
 
 
